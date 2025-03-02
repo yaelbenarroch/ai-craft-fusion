@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Header = () => {
@@ -37,17 +37,6 @@ const Header = () => {
             >
               <Github className="w-4 h-4" />
               <span>GitHub</span>
-            </a>
-          </Button>
-          <Button variant="outline" size="sm" asChild>
-            <a 
-              href="https://streamlit.io/audioviz-ai" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
-            >
-              <ExternalLink className="w-4 h-4" />
-              <span>Streamlit App</span>
             </a>
           </Button>
         </div>
