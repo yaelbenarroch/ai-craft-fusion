@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Upload, File, AlertCircle } from 'lucide-react';
 import { Button } from './ui/button';
@@ -12,6 +12,7 @@ interface AudioUploaderProps {
 const AudioUploader = ({ onFileUpload }: AudioUploaderProps) => {
   const [isDragging, setIsDragging] = useState(false);
   const [file, setFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -58,6 +59,12 @@ const AudioUploader = ({ onFileUpload }: AudioUploaderProps) => {
     }
   };
 
+  const handleContainerClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    // Trigger click on the hidden file input
+    fileInputRef.current?.click();
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -72,11 +79,12 @@ const AudioUploader = ({ onFileUpload }: AudioUploaderProps) => {
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
-        onClick={() => document.getElementById('file-input')?.click()}
+        onClick={handleContainerClick}
       >
         <input
           type="file"
           id="file-input"
+          ref={fileInputRef}
           className="hidden"
           accept="audio/*"
           onChange={handleFileInput}
