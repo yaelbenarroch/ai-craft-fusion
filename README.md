@@ -1,69 +1,126 @@
-# Welcome to your Lovable project
 
-## Project info
+# AudioViz AI
 
-**URL**: https://lovable.dev/projects/b44e564d-8cff-4e71-9d8c-cb50b65de136
+AudioViz AI is an advanced audio analysis and visualization platform that leverages machine learning to extract musical features from audio files. This end-to-end project showcases sophisticated audio processing techniques with a beautiful, interactive interface.
 
-## How can I edit this code?
+![AudioViz AI Demo](https://github.com/yourusername/audioviz-ai/blob/main/screenshots/demo.png)
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Advanced Audio Visualization**: Interactive waveform and frequency visualizations that respond to audio playback
+- **Machine Learning Analysis**: Extract musical features including genre, BPM, key, and instrument detection
+- **Interactive Web Interface**: Built with React, Framer Motion, and Tailwind CSS for a modern, responsive UI
+- **Streamlit Companion App**: Extended analysis capabilities in a Python-based companion application
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b44e564d-8cff-4e71-9d8c-cb50b65de136) and start prompting.
+## Live Demo
 
-Changes made via Lovable will be committed automatically to this repo.
+- [React Application](https://audioviz-ai.netlify.app)
+- [Streamlit App](https://audioviz-ai-streamlit.streamlit.app)
 
-**Use your preferred IDE**
+## Project Structure
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Web Application (React)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+The frontend application provides a sleek interface for audio file upload, playback, and visualization:
 
-Follow these steps:
+- Real-time audio waveform visualization
+- Dynamic frequency visualization 
+- Interactive audio player with playback controls
+- Feature extraction and analysis results
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Streamlit Application (Python)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+The companion Streamlit app offers more detailed analysis tools:
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Comprehensive audio feature extraction
+- Genre classification with confidence scores
+- Advanced 3D visualizations of audio features
+- Audio fingerprinting and similarity analysis
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## Technical Implementation
+
+### Frontend (React)
+- React with TypeScript for type safety
+- Tailwind CSS for styling
+- Framer Motion for animations
+- Web Audio API for audio processing
+
+### Backend & ML Components
+- Python for audio processing and machine learning
+- Librosa for audio feature extraction
+- TensorFlow/PyTorch for ML models
+- Streamlit for the companion data app
+
+## Getting Started
+
+### Prerequisites
+- Node.js 16+
+- Python 3.8+
+- pip
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/audioviz-ai.git
+cd audioviz-ai
+```
+
+2. Install frontend dependencies
+```bash
+npm install
+```
+
+3. Start the React development server
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Install Python dependencies (for Streamlit app)
+```bash
+pip install -r requirements.txt
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+5. Run the Streamlit app
+```bash
+streamlit run streamlit_app.py
+```
 
-**Use GitHub Codespaces**
+## Data Sources
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This project can use audio files from various sources:
 
-## What technologies are used for this project?
+- User-uploaded audio files
+- Sample audio tracks included in the project
+- Public datasets like GTZAN Genre Collection or FMA (Free Music Archive)
 
-This project is built with .
+## Machine Learning Models
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The project uses several machine learning models for different tasks:
 
-## How can I deploy this project?
+1. **Genre Classification**: Convolutional Neural Network trained on spectrograms
+2. **BPM Detection**: Beat tracking algorithms combined with ML regression
+3. **Instrument Recognition**: Multi-label classification model
+4. **Mood Detection**: Models trained on audio features correlated with emotional responses
 
-Simply open [Lovable](https://lovable.dev/projects/b44e564d-8cff-4e71-9d8c-cb50b65de136) and click on Share -> Publish.
+## Future Enhancements
 
-## I want to use a custom domain - is that possible?
+- Integration with music streaming APIs
+- Real-time microphone input analysis
+- Collaborative filtering for music recommendations
+- Extended ML features for deeper audio analysis
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [Librosa](https://librosa.org/) for audio analysis
+- [TensorFlow](https://www.tensorflow.org/) for machine learning
+- [Streamlit](https://streamlit.io/) for the data app
+- [React](https://reactjs.org/) and [Tailwind CSS](https://tailwindcss.com/) for the frontend
