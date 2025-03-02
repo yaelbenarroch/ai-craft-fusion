@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Button } from './ui/button';
-import { Mic, Music, Waveform, PieChart, BarChart, Loader2 } from 'lucide-react';
+import { Mic, Music, AudioWaveform, PieChart, BarChart, Loader2 } from 'lucide-react';
 import { Progress } from './ui/progress';
 
 interface AnalysisPanelProps {
@@ -61,7 +61,7 @@ const AnalysisPanel = ({ audioUrl }: AnalysisPanelProps) => {
       <Tabs defaultValue="analysis">
         <TabsList className="grid grid-cols-3 mb-4">
           <TabsTrigger value="analysis" className="flex items-center gap-2">
-            <Waveform className="h-4 w-4" />
+            <AudioWaveform className="h-4 w-4" />
             <span>Analysis</span>
           </TabsTrigger>
           <TabsTrigger value="genres" className="flex items-center gap-2">
@@ -130,7 +130,7 @@ const AnalysisPanel = ({ audioUrl }: AnalysisPanelProps) => {
                 onClick={handleAnalyze}
                 className="flex items-center gap-2"
               >
-                <Waveform className="h-4 w-4" />
+                <AudioWaveform className="h-4 w-4" />
                 <span>Analyze Audio</span>
               </Button>
               <p className="text-xs text-muted-foreground mt-2">
